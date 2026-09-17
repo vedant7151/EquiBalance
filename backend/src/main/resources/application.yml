@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: equibalance-backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/equibalance
+    username: equibalance
+    password: equibalance
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: always
+
+equibalance:
+  jwt:
+    secret: ${JWT_SECRET:dev-only-secret-key-change-in-production-please-make-me-long-enough-for-hs256}
+    access-token-expiry-ms: 900000        # 15 minutes
+    refresh-token-expiry-ms: 604800000    # 7 days
+  price:
+    provider: ${PRICE_PROVIDER:alphavantage}   # alphavantage | yahoo
+    alphavantage:
+      api-key: ${ALPHAVANTAGE_API_KEY:demo}
+      base-url: https://www.alphavantage.co/query
+    cache-ttl-seconds: 60
+
+cors:
+  allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}

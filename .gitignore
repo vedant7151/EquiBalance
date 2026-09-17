@@ -1,0 +1,65 @@
+# ==== Internal docs (not for GitHub) ====
+PRD_1_EquiBalance_Portfolio_Management.md
+
+# ==== Environment / Secrets ====
+.env
+.env.local
+.env.*.local
+**/application-local.yml
+**/application-secrets.yml
+
+# ==== Java / Maven / Spring Boot ====
+backend/target/
+backend/.mvn/wrapper/maven-wrapper.jar
+*.class
+*.jar
+!.mvn/wrapper/maven-wrapper.jar
+HELP.md
+.mvn/
+!**/src/main/**
+!**/src/test/**
+
+# ==== IDE ====
+.idea/
+*.iml
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+*.swp
+*.swo
+
+# ==== Node / React / Vite ====
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==== Python ====
+python-scripts/__pycache__/
+python-scripts/venv/
+python-scripts/.venv/
+*.pyc
+
+# ==== Docker ====
+docker-data/
+pgdata/
+redisdata/
+
+# ==== Logs ====
+*.log
+logs/
+
+# ==== OS ====
+.DS_Store
+Thumbs.db
+
+# ==== Test / Coverage ====
+coverage/
+*.lcov
+backend/target/surefire-reports/
