@@ -7,25 +7,6 @@ free market-data API. An analytics dashboard tracks portfolio performance, asset
 breakdown, and rebalancing history — mirroring the core function of Parametric's custom
 portfolio solutions.
 
----
-
-## Table of Contents
-
-- [Features](#features)
-- [Tech Stack](#tech-stack)
-- [Architecture](#architecture)
-- [Project Structure](#project-structure)
-- [Getting Started](#getting-started)
-- [Environment Variables / API Keys](#environment-variables--api-keys)
-- [Running with Docker Compose](#running-with-docker-compose)
-- [Running Locally (without Docker)](#running-locally-without-docker)
-- [API Reference](#api-reference)
-- [Data Model](#data-model)
-- [Rebalancing Algorithm](#rebalancing-algorithm)
-- [Testing](#testing)
-- [Free Resources Used](#free-resources-used)
-
----
 
 ## Features
 
@@ -217,29 +198,6 @@ This starts:
 
 Visit http://localhost:5173.
 
-## Running Locally (without Docker)
-
-**Backend:**
-
-```bash
-cd backend
-# Start Postgres + Redis only, e.g.:
-docker compose up postgres redis
-mvn spring-boot:run
-```
-
-**Frontend:**
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Vite will serve on http://localhost:5173 and proxy API calls to `http://localhost:8080/api`
-(configurable via `VITE_API_BASE_URL`).
-
----
 
 ## API Reference
 
